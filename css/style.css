@@ -574,6 +574,11 @@ main .btn-send {
 	border: none;
 	transition: all .3s ease;
 }
+
+.firstmovie img{
+    height: 10em;
+    width: 10em;
+}
 main .btn-send:hover {
 	background: var(--dark-blue);
 }

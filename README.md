@@ -1,0 +1,1 @@
+No fue funcional del todo Vite por lo que se hizo con el index.html y funcional con el link de github

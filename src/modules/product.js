@@ -65,10 +65,12 @@ export const getAllUrlAndTypeOfObjectsForMoviesAndTv = async (url,type) => {
 
 //Consulta los títulos, años de lanzamiento originales y tipos de objetos, pero solo para películas.
 export const getAllTitulesAndYearsOfOriginalRangesAndTypeOfObjectsToMovies = async (titule,year,type) => {
-    let res = await fetch("https://search.imdbot.workers.dev/?q=titule=${titule}&year=${year}&type=${type}", config)
+    let res = await fetch(`https://search.imdbot.workers.dev/?q=titule=${titule}&year=${year}&type=${type}`, config)
     let data = await res.json();
     return data;
 }
+
+
 
 
 
