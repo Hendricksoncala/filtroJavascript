@@ -1,9 +1,78 @@
-export const getAll = async () => {
-    let res = await fetch("")
+export const getAllMovesOfEsp = async () => {
+    let res = await fetch("https://search.imdbot.workers.dev/?q=esp", config)
     let data = await res.json();
     return data;
 
 }
+
+export const getAllMovesNotEspecific = async () => {
+    let res = await fetch("https://search.imdbot.workers.dev/?q=")
+    let data = await res.json();
+    return data;
+
+}
+/*FUNCIONALES PARA EL EXAMEN-------------------------------*/ 
+//Filtrar películas por año de lanzamiento.
+export const getAllMoviesForYearOfRelease = async (year) => {
+    let res = await fetch(`https://search.imdbot.workers.dev/?q=year&year=${year}`, config)
+    let data = await res.json();
+    return data;
+
+
+}
+
+//Filtrar películas por actor.
+export const getAllMoviesForTheActor = async (actor) => {
+    let res = await fetch(`https://search.imdbot.workers.dev/?q=${actor}`, config)
+    let data = await res.json();
+    return data;
+
+}
+
+//Filtrar películas por rango de IMDb.
+export const getAllMoviesForTheRangeOfImdb = async (min, max) => {
+    let res = await fetch(`https://search.imdbot.workers.dev/?q=imdb&min=${min}&max=${max}`, config)
+    let data = await res.json();
+    return data;
+}
+//Consulta los títulos de todas las películas.
+export const getAllTitulesOfMovies = async () => {
+    let res = await fetch(`https://search.imdbot.workers.dev/?q=title`, config)
+    let data = await res.json();
+    return data;
+}
+
+//Consulta los títulos y años de lanzamiento originales de todos los contenidos (películas y programas de TV).
+export const getAllTitulesAndYearsOfOriginalRangesToAllTheContents = async () => {
+    let res = await fetch(`https://search.imdbot.workers.dev/?q=original`, config)
+    let data = await res.json();
+    return data;
+}
+
+//Consulta los identificadores y títulos de todas las películas.
+export const getAllIdentificateAndTitulesOfAllTheMovies = async (titule,id) => {
+    let res = await fetch(`https://search.imdbot.workers.dev/?q=titule=${titule}&id=${id}`, config)
+    let data = await res.json();
+    return data;
+}
+
+//Consulta las URL completas y los tipos de objetos (películas y programas de TV).
+export const getAllUrlAndTypeOfObjectsForMoviesAndTv = async (url,type) => {
+    let res = await fetch(`https://search.imdbot.workers.dev/?q=url=${url}&type=${type}`, config)
+    let data = await res.json();
+    return data;
+}
+
+//Consulta los títulos, años de lanzamiento originales y tipos de objetos, pero solo para películas.
+export const getAllTitulesAndYearsOfOriginalRangesAndTypeOfObjectsToMovies = async (titule,year,type) => {
+    let res = await fetch("https://search.imdbot.workers.dev/?q=titule=${titule}&year=${year}&type=${type}", config)
+    let data = await res.json();
+    return data;
+}
+
+
+
+
 
 /*JAVASCRIPT DEL TIPO QUE NOS DICE COMOP HACERLO  Y SON PRTE DEL JS*/
 
